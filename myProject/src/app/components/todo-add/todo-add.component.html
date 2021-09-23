@@ -1,0 +1,32 @@
+<div class="content">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header"><h5 class="title"> Todo Name</h5></div>
+            <div class="card-body">
+                <form  [formGroup]="todoAddForm">
+                    <div class="form-group">
+        
+                        <label for="html">Title :</label><br>
+                            <input type="text"  id="title" formControlName="title" class="form-control" placeholder="Todo Name"><br>
+        
+            
+                       <label for="html">ID :</label><br>
+                            <input type="number"  id="id" formControlName="id" class="form-control" placeholder="Todo id"><br>
+                        
+                        
+                        <label for="html">Compeleted :</label><br>
+                            <input type="radio" id="completed" formControlName = "completed" value="True">
+                            <label for="html">Yes</label><br>
+                        <input type="radio" id="completed" formControlName = "completed" value="False">
+                            <label for="css">No</label><br></div>
+               
+                            <label for="html">CategoryID :</label><br>
+                            <input type="number"  id="categoryId" formControlName="categoryId" class="form-control" placeholder="Todo id"><br>
+                        
+                            <button type="button"  (click)="add()" class="btn btn-primary"><h5>Kaydet</h5></button>
+                </form>
+            </div>
+         
+        </div>
+    </div>
+</div>

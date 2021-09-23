@@ -1,0 +1,32 @@
+<div *ngIf = "dataloaded == false" class="spinner-border" role="status"></div>
+
+<div class="form-group">
+  <label for="filterText">Search</label>
+  <input type="text" class="form-control" [(ngModel)] = "filterText" id="filterText" aria-describedby="emailHelp" placeholder="Search....">
+  <br>
+  <div *ngIf="filterText.length>2" class="alert alert-info">
+    {{filterText}} aradinizs
+  </div>
+</div>
+<table *ngIf = "dataloaded == true" class="table table-dark table-striped">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">userId</th>
+        <th scope="col">id</th>
+        <th scope="col">title</th>
+        <th scope="col">Kdv</th>
+        <th scope="col">completed</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let todo of todos | filterPipe : filterText">
+        <th  scope="row">{{todo.userId}}</th>
+        <td  scope="row">{{todo.id}}</td>
+        <td  scope="row">{{todo.title | uppercase}}</td>
+        <td  scope="row">{{todo.id | vatAdded:18 | currency}}</td>
+        <td  scope="row">{{todo.completed}}</td>
+        <td><button class="btn btn-info" (click)="addtoCart(todo)">EKLE</button></td>
+      </tr>
+    </tbody>
+  </table>

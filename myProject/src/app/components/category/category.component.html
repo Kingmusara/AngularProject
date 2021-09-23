@@ -1,0 +1,5 @@
+<div class="list-group" routerLink="https://jsonplaceholder.typicode.com/todos/{{cat.categoryId}}"  (click)="setCurrentCategory(cat)" *ngFor="let cat of categories">
+    <a href="#"  class="list-group-item list-group-item-active list-group-item-action list-group-item-dark">{{cat.categoryName}}</a>
+</div>
+
+<h6 *ngIf= "currentCategory">{{currentCategory.categoryName}}</h6>
